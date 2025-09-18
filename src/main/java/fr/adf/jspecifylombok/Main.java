@@ -1,5 +1,6 @@
 package fr.adf.jspecifylombok;
 
+import fr.adf.jspecifylombok.records.Container;
 import fr.adf.jspecifylombok.records.RecordWithBuilder;
 import java.util.Locale;
 import org.jspecify.annotations.Nullable;
@@ -11,6 +12,11 @@ public class Main {
 
         var main = new Main();
         main.nullSafeUpperCase(recordWithBuilder.arg2());
+
+        System.out.println("Custom Builder: "
+                + RecordWithBuilder.builder()
+                        .assignBoth(new Container("heyhey"))
+                        .build());
     }
 
     public void nullSafeUpperCase(@Nullable String arg) {
