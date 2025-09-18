@@ -10,10 +10,10 @@ public class Main {
         System.out.println("recordWithBuilder = " + recordWithBuilder);
 
         var main = new Main();
-        main.doSomethingWithArg(recordWithBuilder.arg2());
+        main.nullSafeUpperCase(recordWithBuilder.arg2());
     }
 
-    public void doSomethingWithArg(@Nullable String arg) {
+    public void nullSafeUpperCase(@Nullable String arg) {
         System.out.println("doSomethingWithArg: " + String.valueOf(arg).toUpperCase(Locale.ROOT));
     }
 }
